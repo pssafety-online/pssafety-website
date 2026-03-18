@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บทความ OHS | PS Safety</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Prompt', 'Arial', sans-serif; color: #333; line-height: 1.6; background: #f8f9fa; }
+        .navbar { background: #1B4F72; padding: 15px 0; color: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .navbar-content { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .navbar-brand { font-size: 24px; font-weight: bold; margin-bottom: 5px; }
+        .navbar-sub { font-size: 12px; color: rgba(255,255,255,0.8); }
+        .articles-hero {
+            background: linear-gradient(135deg, #1B4F72 0%, #2E86C1 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .articles-hero h1 { font-size: 48px; margin-bottom: 15px; font-weight: bold; }
+        .articles-hero p { font-size: 18px; max-width: 600px; margin: 0 auto; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .categories-section {
+            padding: 60px 20px;
+            background: white;
+            margin-bottom: 40px;
+        }
+        .section-title { text-align: center; margin-bottom: 30px; }
+        .section-title h2 { font-size: 32px; color: #1B4F72; margin-bottom: 10px; }
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .category-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .category-card:hover { transform: translateY(-5px); box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
+        .cat-emoji { font-size: 48px; margin-bottom: 15px; display: block; }
+        .category-card h3 { color: #1B4F72; margin-bottom: 10px; font-size: 18px; }
+        .category-card p { color: #666; font-size: 14px; }
+        .articles-section {
+            padding: 60px 20px;
+        }
+        .articles-section h2 { text-align: center; font-size: 32px; color: #1B4F72; margin-bottom: 40px; }
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .article-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .article-card:hover { transform: translateY(-8px); box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
+        .card-header {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+            height: 100px;
+        }
+        .card-emoji { font-size: 40px; }
+        .card-category {
+            font-size: 12px;
+            background: rgba(0,0,0,0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+        .card-body { padding: 25px; }
+        .card-body h3 { margin-bottom: 12px; }
+        .card-body h3 a { color: #1B4F72; text-decoration: none; }
+        .card-body h3 a:hover { color: #E67E22; }
+        .card-excerpt { color: #666; font-size: 14px; margin-bottom: 15px; }
+        .card-meta { font-size: 13px; color: #999; margin-bottom: 15px; }
+        .read-more {
+            display: inline-block;
+            color: #E67E22;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .read-more:hover { color: #D35400; }
+        .footer {
+            background: #1B4F72;
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .footer h4 { margin-bottom: 10px; }
+        .footer p { margin: 8px 0; font-size: 14px; }
+        .footer-divider { border-top: 1px solid rgba(255,255,255,0.2); margin-top: 30px; padding-top: 20px; }
+        @media (max-width: 768px) {
+            .articles-hero h1 { font-size: 32px; }
+            .articles-grid { grid-template-columns: 1fr; }
+            .categories-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <div class="navbar-brand">PS Safety Co., Ltd.</div>
+            <div class="navbar-sub">บริษัท พีเอส เซฟตี้ จำกัด | ประสบการณ์ 12+ ปี | ISO 9001 Certified | ศูนย์ฝึกอบรม #13-66-047</div>
+        </div>
+    </nav>
+
+    <div class="articles-hero">
+        <h1>📚 บทความความปลอดภัย OHS</h1>
+        <p>เรียนรู้เกี่ยวกับความปลอดภัย อาชีวอนามัย และการบริหารจัดการอันตรายในสถานที่ทำงาน</p>
+    </div>
+
+    <div class="categories-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>หมวดหมู่บทความ</h2>
+                <p>เลือกหมวดหมู่ที่สนใจ</p>
+            </div>
+            <div class="categories-grid">
+                
+        <div class="category-card" style="border-left: 4px solid #1B4F72;">
+            <div class="cat-emoji" style="color: #1B4F72;">🏗️</div>
+            <h3>งานตรวจสอบวิศวกรรม</h3>
+            <p>4 บทความ</p>
+        </div>
+
+        <div class="category-card" style="border-left: 4px solid #7D3C98;">
+            <div class="cat-emoji" style="color: #7D3C98;">⚖️</div>
+            <h3>กฎหมายและมาตรฐาน OHS</h3>
+            <p>4 บทความ</p>
+        </div>
+
+        <div class="category-card" style="border-left: 4px solid #1E8449;">
+            <div class="cat-emoji" style="color: #1E8449;">🏆</div>
+            <h3>ISO และงานที่ปรึกษา</h3>
+            <p>4 บทความ</p>
+        </div>
+
+        <div class="category-card" style="border-left: 4px solid #D68910;">
+            <div class="cat-emoji" style="color: #D68910;">📚</div>
+            <h3>การฝึกอบรม OHS</h3>
+            <p>4 บทความ</p>
+        </div>
+
+        <div class="category-card" style="border-left: 4px solid #C0392B;">
+            <div class="cat-emoji" style="color: #C0392B;">🧤</div>
+            <h3>ความปลอดภัยทั่วไปและ AI</h3>
+            <p>4 บทความ</p>
+        </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="articles-section">
+        <div class="container">
+            <h2>🎯 บทความทั้งหมด (20 บทความ)</h2>
+            <div class="articles-grid">
+                
+        <div class="article-card">
+            <div class="card-header" style="background: linear-gradient(135deg, #1B4F72, rgba(0,0,0,0.2));">
+                <span class="card-emoji">🏗️</span>
+                <span class="card-category">งานตรวจสอบวิศวกรรม</span>
+            </div>
+            <div class="card-body">
+                <h3><a href="articles/article-01.html">ปั้นจั่น (Crane) ตรวจอย่างไรให้ปลอดภัย</a></h3>
+                <p class="card-excerpt">คู่มือการตรวจสอบปั้นจั่นตามมาตรฐานสากล</p>
+                <div class="card-meta">
+                    <span>⏱️ 8 นาที</span>
+                </div>
+                <a href="articles/article-01.html" class="read-more">อ่านต่อ →</a>
+            </div>
+        </div>
+
+        <div class="article-card">
+            <div class="card-header" style="background: linear-gradient(135deg, #E67E22, rgba(0,0,0,0.2));">
+                <span class="card-emoji">⚡</span>
+                <span class="card-category">งานตรวจสอบวิศวกรรม</span>
+            </div>
+            <div class="card-body">
+                <h3><a href="articles/article-02.html">ตรวจสอบระบบไฟฟ้าประจำปี ทำไมถึงสำคัญ</a></h3>
+                <p class="card-excerpt">มาตรฐานการตรวจสอบไฟฟ้าประจำปีเพื่อความปลอดภัย</p>
+                <div class="card-meta">
+                    <span>⏱️ 7 นาที</span>
+                </div>
+                <a href="articles/article-02.html" class="read-more">อ่านต่อ →</a>
+            </div>
+        </div>
+
+        <div class="article-card">
+            <div class="card-header" style="background: linear-gradient(135deg, #C0392B, rgba(0,0,0,0.2));">
+                <span class="card-emoji">♨️</span>
+                <span class="card-category">งานตรวจสอบวิศวกรรม</span>
+            </div>
+            <div class="card-body">
+                <h3><a href="articles/article-03.html">หม้อไอน้ำ: สิ่งที่ต้องรู้ก่อนตรวจสอบ</a></h3>
+                <p class="card-excerpt">การตรวจสอบหม้อไอน้ำตามมาตรฐาน ASME</p>
+                <div class="card-meta">
+                    <span>⏱️ 8 นาที</span>
+                </div>
+                <a href="articles/article-03.html" class="read-more">อ่านต่อ →</a>
+            </div>
+        </div>
+
+        <div class="article-card">
+            <div class="card-header" style="background: linear-gradient(135deg, #16A085, rgba(0,0,0,0.2));">
+                <span class="card-emoji">🚒</span>
+                <span class="card-category">งานตรวจสอบวิศวกรรม</span>
+            </div>
+            <div class="card-body">
+                <h3><a href="articles/article-04.html">ลิฟท์และ Fire Pump ตรวจสอบตามมาตรฐาน NFPA</a></h3>
+                <p class="card-excerpt">มาตรฐาน NFPA สำหรับลิฟท์และระบบดับเพลิง</p>
+                <div class="card-meta">
+                    <span>⏱️ 9 นาที</span>
+                </div>
+                <a href="articles/article-04.html" class="read-more">อ่านต่อ →</a>
+            </div>
+        </div>
+
+        <div class="article-card">
+            <div class="card-header" style="background: linear-gradient(135deg, #7D3C98, rgba(0,0,0,0.2));">
+                <span class="card-emoji">⚖️</span>
+                <span class="card-category">กฎหมายและมาตรฐาน OHS</span>
+            </div>
+            <div class="card-body">
+                <h3><a href="articles/article-05.html">พ.ร.บ.ความปลอดภัย อาชีวอนามัย 2554 สรุปสาระสำคัญ</a></h3>
+                <p class="card-excerpt">สรุปเนื้อหาสำคัญของพระราชบัญญัติความปลอดภัย</p>
+                <div class="card-meta">
+                    <span>⏱️ 10 นาที</span>
+                </div>
+                <a href="articles/article-05.html" class="read-more">อ่านต่อ →</a>
+            </div>
+        </div>
+
+        <div class="article-card">
+            <div class="card-header" style="background: linear-gradient(135deg, #A93226, rgba(0,0,0,0.2));">
+                <span class="card-emoji">⚠️</span>
+                <span class="card-category">กฎหมายและมาตรฐาน OHS</span>
+            </div>
+            <div class="card-body">
+                <h3><a href="articles/article-06.html">โทษที่นายจ้างต้องรู้ หากไม่ปฏิบัติตามกม.ความปลอดภัย</a></h3>
+                <p class="card-excerpt">การบ่งชี้โทษทางกฎหมายสำหรับการละเมิด OHS</p>
+                <div class="card-meta">
+                    <span>⏱️ 6 นาที</span>
+                </div>
+                <a href="articles/article-06.html" class="read-more">อ่านต่อ →</a>
+            </div>
+        </div>
+
+        <div class="article-card">
+            <div class="card-header" style="background: linear-gradient(135deg, #5B2C6F, rgba(0,0,0,0.2));">
+                <span class="card-emoji">📑</span>
+                <span class="card-category">กฎหมายและมาตรฐาน OHS</span>
+            </div>
+            <div class="card-body">
+                <h3><a href="articles/article-07.html">กฎกระทรวงที่เกี่ยวข้องกับปั้นจั่นและหม้อไอน้ำ</a></h3>
+                <p class="card-excerpt">ประกาศกฎกระทรวงเกี่ยวกับงานวิศวกรรม</p>
+                <div class="card-meta">
+                    <span>⏱️ 7 นาที</span>
+                </div>
+                <a href="articles/article-07.html" class="read-more">อ่านต่อ →</a>
+            </div>
+        </div>
+
+        <div class="article-card">
+            <div class="card-header" style="background: linear-gradient(135deg, #34495E, rgba(0,0,0,0.2));">
+                <span class="card-emoji">📋</span>
+                <span class="card-category">กฎหมายและมาตรฐาน OHS</span>
+            </div>
+            <div class="card-body">
+                <h3><a href="articles/article-08.html">การจัดทำ ปอ.1 และ ปอ.2 อย่างถูกต้อง</a></h3>
+                <p class="card-excerpt">แบบฟอร์มรายงานอุบัติเหตุตามกฎหมาย</p>
+                <div class="card-meta">
+                    <span>⏱️ 8 นาที</span>
+                </div>
+                <a href="articles/article-08.html" class="read-more">อ่านต่อ →</a>
+            </div>
+        </div>
+
+        <div class="article-card">
+            <div class="card-header" style="background: linear-gradient(135deg, #1E8449, rgba(0,0,0,0.2));">
+                <span class="card-emoji">🏆</span>
+                <span class="card-category">ISO และงานที่ปรึกษา</span>
+            </div>
+            <div class="card-body">
+                <h3><a href="articles/article-09.html">ISO 45001 คืออะไร? ทำไมองค์กรต้องมี</a></h3>
+                <p class="card-excerpt">ระบบจัดการความปลอดภัยและสุขภาพในการทำงาน</p>
+                <div class="card-meta">
+                    <span>⏱️ 9 นาที</span>
+                </div>
+                <a href="articles/article-09.html" class="read-more">อ่านต่อ →</a>
+            </div>
+        </div>
+
+        <div class="article-card">
+            <div class="card-header" style="background: linear-gradient(135deg, #0B5345, rgba(0,0,0,0.2));">
+                <span class="card-emoji">🌍</span>
+                <span class="card-category">ISO และงานที่ปรึกษา</span>
+            </div>
+            <div class="card-body">
+                <h3><a href="articles/article-10.html">ISO 14001 ระบบการจัดการสิ่งแวดล้อม เริ่มต้นอย่างไร</a></h3>
+                <p class="card-excerpt">ระบบจัดการสิ่งแวดล้อมและความเสี่ยง</p>
+                <div class="card-meta">
+                    <span>⏱️ 8 นาที</span>
+                </div>
+                <a href="articles/article-10.html" class="read-more">อ่านต่อ →</a>
+            </div>
+        </div>
+
+        <div class="article-card">
+            <div class="card-header" style="background: linear-gradient(135deg, #2E4053, rgba(0,0,0,0.2));">
+                <span class="card-emoji">📊</span>
+                <span class="card-category">ISO และงานที่ปรึกษา</span>
+            </div>
+            <div class="card-body">
+                <h3><a href="articles/article-11.html">Sedex-SMETA: มาตรฐานที่โรงงานส่งออกต้องรู้</a></h3>
+                <p class="card-excerpt">มาตรฐานสังคมสำหรับโรงงานส่งออก</p>
+                <div class="card-meta">
+                    <span>⏱️ 7 นาที</span>
+                </div>
+                <a href="articles/article-11.html" class="read-more">อ่านต่อ →</a>
+            </div>
+        </div>
+
+        <div class="article-card">
+            <div class="card-header" style="background: linear-gradient(135deg, #1F618D, rgba(0,0,0,0.2));">
+                <span class="card-emoji">👨‍💼</span>
+                <span class="card-category">ISO และงานที่ปรึกษา</span>
+            </div>
+            <div class="card-body">
+                <h3><a href="articles/article-12.html">ผู้ชำนาญการด้านความปลอดภัย: บทบาทและหน้าที่</a></h3>
+                <p class="card-excerpt">บทบาทและความรับผิดชอบของ Safety Officer</p>
+                <div class="card-meta">
+                    <span>⏱️ 6 นาที</span>
+                </div>
+                <a href="articles/article-12.html" class="read-more">อ่านต่อ →</a>
+            </div>
+        </div>
+
+        <div class="article-card">
+            <div class="card-header" style="background: linear-gradient(135deg, #D68910, rgba(0,0,0,0.2));">
+                <span class="card-emoji">📚</span>
+                <span class="card-category">การฝึกอบรม OHS</span>
+            </div>
+            <div class="card-body">
+                <h3><a href="articles/article-13.html">หลักสูตร จป.หัวหน้างาน vs จป.บริหาร ต่างกันอย่างไร</a></h3>
+                <p class="card-excerpt">เปรียบเทียบหลักสูตรการฝึกอบรมความปลอดภัย</p>
+                <div class="card-meta">
+                    <span>⏱️ 7 นาที</span>
+                </div>
+                <a href="articles/article-13.html" class="read-more">อ่านต่อ →</a>
+            </div>
+        </div>
+
+        <div class="article-card">
+            <div class="card-header" style="background: linear-gradient(135deg, #BA4A00, rgba(0,0,0,0.2));">
+                <span class="card-emoji">🎓</span>
+                <span class="card-category">การฝึกอบรม OHS</span>
+            </div>
+            <div class="card-body">
+                <h3><a href="articles/article-14.html">อบรมความปลอดภัย 6 ชั่วโมง ใครต้องเข้า?</a></h3>
+                <p class="card-excerpt">หลักเกณฑ์และเนื้อหาการฝึกอบรมความปลอดภัย</p>
+                <div class="card-meta">
+                    <span>⏱️ 5 นาที</span>
+                </div>
+                <a href="articles/article-14.html" class="read-more">อ่านต่อ →</a>
+            </div>
+        </div>
+
+        <div class="article-card">
+            <div class="card-header" style="background: linear-gradient(135deg, #7D3C98, rgba(0,0,0,0.2));">
+                <span class="card-emoji">📈</span>
+                <span class="card-category">การฝึกอบรม OHS</span>
+            </div>
+            <div class="card-body">
+                <h3><a href="articles/article-15.html">การประเมินความเสี่ยง (Risk Assessment) ทำอย่างไร</a></h3>
+                <p class="card-excerpt">วิธีการวิเคราะห์และประเมินความเสี่ยง</p>
+                <div class="card-meta">
+                    <span>⏱️ 8 นาที</span>
+                </div>
+                <a href="articles/article-15.html" class="read-more">อ่านต่อ →</a>
+            </div>
+        </div>
+
+        <div class="article-card">
+            <div class="card-header" style="background: linear-gradient(135deg, #5B2C6F, rgba(0,0,0,0.2));">
+                <span class="card-emoji">🔍</span>
+                <span class="card-category">การฝึกอบรม OHS</span>
+            </div>
+            <div class="card-body">
+                <h3><a href="articles/article-16.html">การสอบสวนอุบัติเหตุ: วิธีที่ถูกต้องตามกฎหมาย</a></h3>
+                <p class="card-excerpt">ขั้นตอนและวิธีการสอบสวนอุบัติเหตุ</p>
+                <div class="card-meta">
+                    <span>⏱️ 9 นาที</span>
+                </div>
+                <a href="articles/article-16.html" class="read-more">อ่านต่อ →</a>
+            </div>
+        </div>
+
+        <div class="article-card">
+            <div class="card-header" style="background: linear-gradient(135deg, #C0392B, rgba(0,0,0,0.2));">
+                <span class="card-emoji">🧤</span>
+                <span class="card-category">ความปลอดภัยทั่วไปและ AI</span>
+            </div>
+            <div class="card-body">
+                <h3><a href="articles/article-17.html">PPE ที่ถูกต้องสำหรับแต่ละงาน: คู่มือฉบับสมบูรณ์</a></h3>
+                <p class="card-excerpt">อุปกรณ์ป้องกันส่วนบุคคลสำหรับแต่ละสภาพงาน</p>
+                <div class="card-meta">
+                    <span>⏱️ 7 นาที</span>
+                </div>
+                <a href="articles/article-17.html" class="read-more">อ่านต่อ →</a>
+            </div>
+        </div>
+
+        <div class="article-card">
+            <div class="card-header" style="background: linear-gradient(135deg, #16A085, rgba(0,0,0,0.2));">
+                <span class="card-emoji">✨</span>
+                <span class="card-category">ความปลอดภัยทั่วไปและ AI</span>
+            </div>
+            <div class="card-body">
+                <h3><a href="articles/article-18.html">5ส กับการเพิ่มความปลอดภัยในโรงงาน</a></h3>
+                <p class="card-excerpt">การใช้หลักการ 5S เพื่อปลอดภัยและเรียบร้อย</p>
+                <div class="card-meta">
+                    <span>⏱️ 6 นาที</span>
+                </div>
+                <a href="articles/article-18.html" class="read-more">อ่านต่อ →</a>
+            </div>
+        </div>
+
+        <div class="article-card">
+            <div class="card-header" style="background: linear-gradient(135deg, #1F618D, rgba(0,0,0,0.2));">
+                <span class="card-emoji">🤖</span>
+                <span class="card-category">ความปลอดภัยทั่วไปและ AI</span>
+            </div>
+            <div class="card-body">
+                <h3><a href="articles/article-19.html">AI กับงาน OHS: อนาคตของความปลอดภัยในที่ทำงาน</a></h3>
+                <p class="card-excerpt">เทคโนโลยี AI ในการบริหารจัดการความปลอดภัย</p>
+                <div class="card-meta">
+                    <span>⏱️ 8 นาที</span>
+                </div>
+                <a href="articles/article-19.html" class="read-more">อ่านต่อ →</a>
+            </div>
+        </div>
+
+        <div class="article-card">
+            <div class="card-header" style="background: linear-gradient(135deg, #34495E, rgba(0,0,0,0.2));">
+                <span class="card-emoji">🌟</span>
+                <span class="card-category">ความปลอดภัยทั่วไปและ AI</span>
+            </div>
+            <div class="card-body">
+                <h3><a href="articles/article-20.html">สร้างวัฒนธรรมความปลอดภัยในองค์กร ทำได้อย่างไร</a></h3>
+                <p class="card-excerpt">วิธีการพัฒนาวัฒนธรรมความปลอดภัยในองค์กร</p>
+                <div class="card-meta">
+                    <span>⏱️ 9 นาที</span>
+                </div>
+                <a href="articles/article-20.html" class="read-more">อ่านต่อ →</a>
+            </div>
+        </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <h4>PS Safety Co., Ltd.</h4>
+        <p>บริษัท พีเอส เซฟตี้ จำกัด</p>
+        <p>ความปลอดภัย อาชีวอนามัย และสุขาภิบาลแห่งการจ้าง</p>
+        <div class="footer-divider">
+            <p><strong>ข้อมูลติดต่อ</strong></p>
+            <p>📱 Line OA: @pssafety</p>
+            <p>🌐 Website: www.pssafety.online</p>
+            <p style="font-size: 11px; margin-top: 15px;">ISO 9001 Certified | ศูนย์ฝึกอบรม #13-66-047 | ประสบการณ์ 12+ ปี</p>
+            <p style="font-size: 11px; margin-top: 10px;">© 2568 PS Safety Co., Ltd. สงวนลิขสิทธิ์</p>
+        </div>
+    </footer>
+</body>
+</html>
